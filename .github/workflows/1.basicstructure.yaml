@@ -3,8 +3,8 @@ on:
   push:
     branches: [ main ]
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build: # job name
+    runs-on: ubuntu-latest # runner types
     steps:
       - uses: actions/checkout@v4
       - name: Run a Script
