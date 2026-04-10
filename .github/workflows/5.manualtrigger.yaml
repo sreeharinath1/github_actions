@@ -6,10 +6,7 @@ on:
         description: "Select env"
         type: choice
         required: true
-        options:
-          - prod
-          - stage
-          - dev
+        options: [prod, dev, stage]
 jobs:
   build:
     runs-on: ubuntu-latest
