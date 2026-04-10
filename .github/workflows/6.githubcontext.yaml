@@ -26,3 +26,7 @@ jobs:
         run: echo ${{github.actor}}
       - name: print repo
         run: echo ${{github.repository}}
+      - name: print a runnerid
+        run: echo ${{github.run_id}}
+      - name: print a run_number
+        run: echo ${{github.run_number}}
