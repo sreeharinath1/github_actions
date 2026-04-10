@@ -2,7 +2,7 @@ name: c.pathfiltering
 on:
   push:
     paths:
-      - "feature/*"
+      - "!feature/*"
       - "commit.txt"
       - "*.ts"
 jobs:

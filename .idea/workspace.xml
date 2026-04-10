@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9485b8-e51f-4072-9886-c466ca71d743" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/3.pathfiltering.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/3.pathfiltering.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/3.pathfiltering.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/commit.txt" beforeDir="false" afterPath="$PROJECT_DIR$/commit.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feature/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/feature/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,10 +40,14 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/DevOps/Github-Actions"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\DevOps\Github-Actions" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\DevOps\Github-Actions\.github\workflows" />
     </key>
