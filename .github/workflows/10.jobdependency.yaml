@@ -31,3 +31,16 @@ jobs:
     needs: [gen-matrix, cancel]
     steps:
       - run: echo "cancelled"
+        # job failure
+  hand:
+    runs-on: ubuntu-latest
+    needs: gen-matrix
+    if: always()
+    steps:
+      - run: echo "iam always
+    if: success()
+    steps:
+      - run: echo "iam success"
+    if: failure()
+    steps:
+      - run: echo "iam failure"
