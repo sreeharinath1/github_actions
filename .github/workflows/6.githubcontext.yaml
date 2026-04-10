@@ -41,4 +41,4 @@ jobs:
           echo "Runner Debug: ${{ runner.debug }}"
       - name: print job context
         run: |
-          echo "job ? ${{ job.status}}
+          echo "job ${{ job.status}}"
