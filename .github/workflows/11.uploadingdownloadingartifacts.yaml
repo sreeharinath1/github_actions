@@ -25,5 +25,5 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: testapp
-          path: output.txt
+          path: artifacts
       - run: cat output.txt
