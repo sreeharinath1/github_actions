@@ -7,6 +7,12 @@ on:
         type: choice
         required: true
         options: [prod, dev, stage]
+      skip_tests:
+        description: "Select TEST"
+        type: boolean
+        required: false
+        default: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
