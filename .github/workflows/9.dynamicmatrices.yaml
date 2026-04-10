@@ -1,3 +1,11 @@
+name: j.dynamicmatrices
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: " enter a key"
+        type: choice
+        options: [dev, stage]
 prod_gen:
   runs-on: ubuntu-latest
   steps:
