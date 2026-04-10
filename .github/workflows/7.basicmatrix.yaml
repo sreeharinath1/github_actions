@@ -6,7 +6,7 @@ on:
       env:
         description: "enter env"
         type: choice
-        options: dev
+        options: [dev, stage]
 jobs:
   build:
     runs-on: ${{matrix.os}}
