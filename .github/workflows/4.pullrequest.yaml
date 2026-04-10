@@ -4,6 +4,7 @@ on:
     types: [opened, reopened, synchronize, closed, ready_for_review, review_requested, labeled]
     branches:
       - main
+      - dev
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,4 +12,4 @@ jobs:
       - name: run a script
         run: echo "Iam running pull req"
       - name: Iam checking
-        run " echo "iam checking...."
+        run: echo "iam checking...."
