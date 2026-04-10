@@ -7,6 +7,7 @@ on:
         type: choice
         required: true
         options: [prod, dev, stage]
+        default: dev
       skip_tests:
         description: "Select TEST"
         type: boolean
