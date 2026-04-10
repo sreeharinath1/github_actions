@@ -18,5 +18,5 @@ jobs:
         run: echo "Iam example of context"
       - name: Print a branch
         run: echo ${{ github.ref}}
-      - name: print a event
-        run: echo ${{github.event_name}}
+      - name: print a ref name clean branch name
+        run: echo ${{github.ref_name}}
