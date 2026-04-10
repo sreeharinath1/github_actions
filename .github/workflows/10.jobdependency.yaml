@@ -32,7 +32,7 @@ jobs:
     steps:
       - run: echo "cancelled"
         # job failure
-  hand:
+  skip_tests:
     runs-on: ubuntu-latest
     needs: gen-matrix
     if: failure()
