@@ -1,15 +1,26 @@
 name: d.pullrequest
 on:
   pull_request:
-    types: [opened, reopened, synchronize, closed, ready_for_review, review_requested, labeled]
+    types:
+      - opened
+      - reopened
+      - closed
+      - locked
+      - unlocked
+      - assigned
+      - unassigned
+      - labeled
+      - unlabeled
+      - synchronize
+      - ready_for_review
+      - review_requested
+      - review_request_removed
+      - edited
     branches:
       - main
-      - dev
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: run a script
-        run: echo "Iam running pull req"
-      - name: Iam checking
-        run: echo "iam checking...."
+      - name: Run a Script
+        run: echo "Iam running"
