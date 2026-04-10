@@ -12,6 +12,10 @@ on:
         type: boolean
         required: false
         default: true
+      version:
+        description: "Enter application Version"
+        type: string
+        required: true
 
 jobs:
   build:
