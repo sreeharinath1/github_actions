@@ -1,0 +1,26 @@
+
+name: g.basicmatrix
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "enter env"
+        type: choice
+        options: dev
+jobs:
+  build:
+    runs-on: ${{matrix.os}}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        node-version: [18, 20, 21]
+      fail_fast: false
+      max_parallel: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{matrix.node-version}}
+      - run: echo " done"
+
+
