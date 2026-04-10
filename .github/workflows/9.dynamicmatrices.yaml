@@ -15,6 +15,14 @@ jobs:
           echo 'matrix={"include":[{"env":"dev"},{"env":"stage"}]}' >> $GITHUB_OUTPUT
     outputs:
       matrix: ${{steps.set-matrix.outputs.matrix}}
+  prod_gen:
+    runs-on: ubuntu-latest
+    steps:
+      - id: prod-matrix
+        run: |
+          echo 'prod_matrix={"include":[{\"env\":\"${{github.event.inputs.env}}\"}]}' >> GITHUB_OUTPUT
+    outputs:
+      prod_matrix: ${{steps.prod-matrix.outputs.prod_matrix}}
   deploy:
     needs: generate_matrix
     strategy:
@@ -23,3 +31,10 @@ jobs:
     steps:
       - run: cat $matrix
       - run: echo "Deploying to ${{matrix.env}}"
+  prod:
+    needs: prod_gen
+    strategy:
+      matrix: ${{fromJSON(needs.prod_gen.outputs.prod_matrix)}}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying to ${{prod_matrix.env}}"
