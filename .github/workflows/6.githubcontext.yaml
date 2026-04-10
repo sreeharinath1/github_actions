@@ -22,3 +22,7 @@ jobs:
         run: echo ${{github.ref_name}}
       - name: print a sha
         run: echo ${{github.sha}}
+      - name: print actor or who running
+        run: echo ${{github.actor}}
+      - name: print repo
+        run: echo ${{github.repository}}
