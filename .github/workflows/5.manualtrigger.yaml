@@ -16,6 +16,8 @@ on:
         description: "Enter application Version"
         type: string
         required: true
+        default: "sree"
+
 
 jobs:
   build:
