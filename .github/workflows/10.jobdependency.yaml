@@ -37,4 +37,4 @@ jobs:
     needs: gen-matrix
     if: always()
     steps:
-      - run: echo "iam always
+      - run: echo "iam always"
