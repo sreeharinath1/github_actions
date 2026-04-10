@@ -1,0 +1,22 @@
+name: k.updownartifacts
+on:
+  workflow_dispatch:
+    inputs:
+      description: "Enter a value"
+      type: choice
+      options: [dev, stage]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Iam artifatcs" >> output.txt
+      - name: upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: testapp
+          path: output.txt
+          retention-days: 3
+          if-no-files-found: error
+          overwrite: true
+          compression-level: 7
