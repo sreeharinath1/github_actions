@@ -1,0 +1,14 @@
+name: c.pathfiltering
+on:
+  push:
+    paths:
+      - "feature/*"
+      - "commit.txt"
+      - "*.ts"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a Script
+        run: echo "Hi Iam learning pathfilters"
