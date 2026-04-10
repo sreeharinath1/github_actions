@@ -1,4 +1,4 @@
-name: include exclude matrix
+name: i.includeexcludematrix
 on:
   workflow_dispatch:
     inputs:
