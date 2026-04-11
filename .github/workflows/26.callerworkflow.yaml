@@ -8,6 +8,6 @@ on:
         default: dev
 jobs:
   call-ci:
-    uses: sreeharinath1/github_action/.github/workflows.reusableworkflow,yam@main
+    uses: sreeharinath1/github_actions/.github/workflows.reusableworkflow,yam@main
     with:
       environment: prod
