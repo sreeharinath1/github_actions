@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ always()}}
     steps:
-      run: echo "anytime i will run always code"
+      - run: echo "anytime i will run always code"
   can:
     needs: build
     runs-on: ubuntu-latest
