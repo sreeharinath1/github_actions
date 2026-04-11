@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Employee Manager</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>&#128101; Employee Manager</h1>
+        <a href="/employees/new" class="btn btn-primary">+ Add Employee</a>
+    </header>
+
+    <!-- Flash messages -->
+    <div th:if="${success}" class="alert alert-success" th:text="${success}"></div>
+    <div th:if="${error}" class="alert alert-error" th:text="${error}"></div>
+
+    <!-- Employee table -->
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Position</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:if="${#lists.isEmpty(employees)}">
+                <td colspan="6" class="empty">No employees found. Add one!</td>
+            </tr>
+            <tr th:each="emp : ${employees}">
+                <td th:text="${emp.id}"></td>
+                <td th:text="${emp.name}"></td>
+                <td th:text="${emp.email}"></td>
+                <td><span class="badge" th:text="${emp.department}"></span></td>
+                <td th:text="${emp.position}"></td>
+                <td class="actions">
+                    <a th:href="@{/employees/{id}(id=${emp.id})}" class="btn btn-sm">View</a>
+                    <a th:href="@{/employees/edit/{id}(id=${emp.id})}" class="btn btn-sm btn-warning">Edit</a>
+                    <a th:href="@{/employees/delete/{id}(id=${emp.id})}"
+                       class="btn btn-sm btn-danger"
+                       onclick="return confirm('Delete this employee?')">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

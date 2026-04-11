@@ -22,13 +22,15 @@ jobs:
           cache: maven
       - name: Build with maven
         run: mvn clean package -DskipTests
-      - name: Run Unit testcases
+        working-directory: springboot-demo
+      - name: Run Unit test cases
         run: mvn test
-      - name: Upload artfacts
+        working-directory: springboot-demo
+      - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: target/*.jar
+          path: springboot-demo/target/*.jar
           retention-days: 30
           overwrite: true
           if-no-files-found: warn
