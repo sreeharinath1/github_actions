@@ -1,34 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b9485b8-e51f-4072-9886-c466ca71d743" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/16.postgresdbservice.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/16.postgresdbservice.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/DataSeeder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/controller/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/controller/EmployeeRestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/controller/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/exception/ResourceNotFoundException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/model/Employee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/repository/EmployeeRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/java/com/example/demo/service/EmployeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/resources/static/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/resources/templates/employees/detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/resources/templates/employees/form.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/resources/templates/employees/list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/main/resources/templates/error.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/test/java/com/example/demo/controller/EmployeeControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/test/java/com/example/demo/controller/EmployeeRestControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/test/java/com/example/demo/integration/EmployeeApiIT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/test/java/com/example/demo/integration/EmployeeRepositoryIT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/test/java/com/example/demo/service/EmployeeServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/springboot-addeddb/src/test/resources/application-test.properties" beforeDir="false" />
-    </list>
+    <list default="true" id="8b9485b8-e51f-4072-9886-c466ca71d743" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

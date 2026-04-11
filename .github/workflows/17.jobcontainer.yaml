@@ -11,12 +11,12 @@ on:
 jobs:
   test:
     # will use h2 db for just container
-  runs-on: ubuntu-latest
-  container:
-    image: maven:3.9.6-eclipse-temurin-17
-    env:
-      MAVEN_OPTS: "-Xmx512m"
-  steps:
-    - uses: actions/checkout@v4
-    - run: mvn test
-      working-directory: springboot-demo
+    runs-on: ubuntu-latest
+    container:
+      image: maven:3.9.6-eclipse-temurin-17
+      env:
+        MAVEN_OPTS: "-Xmx512m"
+    steps:
+      - uses: actions/checkout@v4
+      - run: mvn test
+        working-directory: springboot-demo
