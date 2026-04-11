@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="'Employee: ' + ${employee.name}">Employee Detail</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>&#128100; Employee Detail</h1>
+        <a href="/employees" class="btn">&#8592; Back</a>
+    </header>
+
+    <div class="detail-card">
+        <div class="detail-row"><span class="label">ID</span><span th:text="${employee.id}"></span></div>
+        <div class="detail-row"><span class="label">Name</span><span th:text="${employee.name}"></span></div>
+        <div class="detail-row"><span class="label">Email</span><span th:text="${employee.email}"></span></div>
+        <div class="detail-row"><span class="label">Department</span><span class="badge" th:text="${employee.department}"></span></div>
+        <div class="detail-row"><span class="label">Position</span><span th:text="${employee.position}"></span></div>
+    </div>
+
+    <div class="form-actions">
+        <a th:href="@{/employees/edit/{id}(id=${employee.id})}" class="btn btn-warning">Edit</a>
+        <a th:href="@{/employees/delete/{id}(id=${employee.id})}"
+           class="btn btn-danger"
+           onclick="return confirm('Are you sure?')">Delete</a>
+    </div>
+</div>
+
+</body>
+</html>

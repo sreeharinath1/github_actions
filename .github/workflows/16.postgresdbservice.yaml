@@ -1,0 +1,36 @@
+name: p.postgresdbservice
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Enter a value"
+        type: choice
+        options:
+          - dev
+          - stage
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRESS_DB: testdb
+          POSTGRES_USER: testuser
+          POSTGRES_PASSWORD: testpass
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U testuser"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+      - uses: Run a Integration test
+        run: mvn clean verify
