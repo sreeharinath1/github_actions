@@ -1,0 +1,45 @@
+name: u.jobconditions
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 15
+      - run: echo "....."
+  succ:
+    needs: build
+    runs-on: ubuntu-latest
+    if: {{ success() }}
+    steps:
+      - run: echo "Build success"
+  fail-notifyteam:
+    needs: build
+    runs-on: ubuntu-latest
+    if: {{ failure() }}
+    steps:
+      - run: echo "Build failed..sending team notification"
+  alw:
+    needs: build
+    runs-on: ubuntu-latest
+    if: {{ always()}}
+    steps:
+      run: echo "anytime i will run always code"
+  can:
+    needs: build
+    runs-on: ubuntu-latest
+    if: ${{ cancelled() }}
+    steps:
+      - run: echo "Build cancelled"
+  strifunc:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Contains check: ${{ contains('hello world','world'}}"
+          echo "Startswith: ${{ startWith('hello','he')}}"
+          echo "endswith: ${{endsWith('hello','lo')}}"
+          echo "hasFiles: ${{hashFiles('**/*.java')}}"
+          echo "toJSON: ${{toJSON(github)}}"
+          echo "FromJson: ${{ fromJSON('{"key":"value"}')}}"
+          echo "Join: ${{join(github.event.inputs.*,','}}"
+          echo "Format: ${{format('version {0}.{1},1,2)}}"
