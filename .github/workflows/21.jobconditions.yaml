@@ -10,19 +10,19 @@ jobs:
   succ:
     needs: build
     runs-on: ubuntu-latest
-    if: {{ success() }}
+    if: ${{ success() }}
     steps:
       - run: echo "Build success"
   fail-notifyteam:
     needs: build
     runs-on: ubuntu-latest
-    if: {{ failure() }}
+    if: ${{ failure() }}
     steps:
       - run: echo "Build failed..sending team notification"
   alw:
     needs: build
     runs-on: ubuntu-latest
-    if: {{ always()}}
+    if: ${{ always()}}
     steps:
       run: echo "anytime i will run always code"
   can:
