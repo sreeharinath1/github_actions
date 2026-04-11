@@ -1,0 +1,12 @@
+name: w.githupermissions
+on:
+  workflow_dispatch:
+permissions:
+  contents: none
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: content permission
+        uses: actions/checkout@v4
+        run: ls -lrt
