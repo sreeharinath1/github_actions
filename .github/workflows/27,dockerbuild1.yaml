@@ -1,0 +1,10 @@
+name:
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build docker Image
+      - run: echoi "docker build -t my-app:${{github.sha}} ."
