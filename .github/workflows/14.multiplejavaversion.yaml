@@ -1,0 +1,26 @@
+name: n.multiplejavaversion
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Enter a value"
+        type: choice
+        options:
+          - dev
+          - stage
+jobs:
+  gen-matrix-node-setup:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [11, 17, 21]
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup java node
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{matrix.java-version}}
+      - name: Run test
+        run: mvn test
+
