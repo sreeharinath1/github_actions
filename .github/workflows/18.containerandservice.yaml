@@ -14,9 +14,9 @@ jobs:
       image: maven:3.9.6-eclipse-temurin-17
       env:
         MAVEN_OPTS: "-Xmx512m"
-      steps:
-        - uses: actions/checkout@v4
-        - run: mvn clean verify -Dspring.profiles.active=test
+    steps:
+      - uses: actions/checkout@v4
+      - run: mvn clean verify -Dspring.profiles.active=test
     services:
       postgres:
         image: postgres:15
