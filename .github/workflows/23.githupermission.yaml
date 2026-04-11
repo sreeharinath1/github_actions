@@ -3,15 +3,15 @@ on:
   workflow_dispatch:
 permissions:
   contents: none
+  packages: none
 jobs:
   build:
     runs-on: ubuntu-latest
+    containers:
+      image: nginx
     steps:
       - name: content permission
         uses: actions/checkout@v4
-      - name: editing a file
-        run: |
-          echo "ouput" > output.txt
-          git push
       - name: list repo file
         run: ls -la
+

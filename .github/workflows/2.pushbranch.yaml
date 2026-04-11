@@ -1,10 +1,10 @@
 name: b.push branch
 on:
-  push:
-    branches:
-      - main
-      - dev
-      - "!feature"
+  #push:
+    #branches:
+     # - main
+      #- dev
+      #- "!feature"
 jobs:
   build:
     runs-on: ubuntu-latest
