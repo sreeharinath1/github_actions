@@ -15,7 +15,7 @@ jobs:
       version: ${{steps.get-version.outputs.version}}
       artifact-name: ${{steps.set-name.outputs.name}}
     steps:
-      - id: version
+      - id: get-version
         run: |
           echo "VERSION=${{github.event.inputs.env}}"
           echo "version=$VERSION" >> $GITHUB_OUTPUT
