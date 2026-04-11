@@ -1,4 +1,4 @@
-name: aa.dockerbuild
+name: za.dockerbuild
 on:
   workflow_dispatch:
 jobs:
