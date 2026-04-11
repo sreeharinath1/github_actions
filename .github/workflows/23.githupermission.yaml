@@ -9,4 +9,3 @@ jobs:
     steps:
       - name: content permission
         uses: actions/checkout@v4
-        run: ls -lrt
