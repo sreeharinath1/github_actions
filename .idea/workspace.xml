@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9485b8-e51f-4072-9886-c466ca71d743" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/22.secretsandvariables.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/22.secretsandvariables.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/16.postgresdbservice.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/16.postgresdbservice.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
