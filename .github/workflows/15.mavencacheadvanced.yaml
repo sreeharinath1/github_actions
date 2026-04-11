@@ -22,6 +22,11 @@ jobs:
         with:
           distribution: temurin
           java-version: ${{matrix.java-version}}
+      - name: advanced maven cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2/repository
+          key: maven-${{runner.os}}-${{ hashFiles('**/pom.xml')}}
+          restore-keys: maven-${{runner.os}}-
       - run: mvn test
         working-directory: springboot-demo
-
