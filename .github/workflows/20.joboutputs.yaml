@@ -1,0 +1,30 @@
+name: t.joboutputs
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: "Enter a Key"
+        type: choice
+        options:
+          - dev
+          - stage
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{steps.get-version.outputs.version}}
+      artifact-name: ${{steps.set-name.outputs.name}}
+    steps:
+      - id: version
+        run: |
+          VERSION:$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+      - id: set-name
+        run: echo "name=my-app-${{github.sha}}" >> $GITHUB_OUTPUT
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Deploying version: ${{needs.build.outputs.version}}"
+          echo "Artifact-name: ${{needs.build.outputs.artifact-name}}"

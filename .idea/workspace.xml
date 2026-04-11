@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8b9485b8-e51f-4072-9886-c466ca71d743" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/19.concurrencycontrol.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/1.basicstructure.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/1.basicstructure.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/20.joboutputs.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
