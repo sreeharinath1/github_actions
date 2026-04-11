@@ -17,7 +17,7 @@ jobs:
     steps:
       - id: version
         run: |
-          VERSION:$(github.event.inputs.env)
+          VERSION:$(github.events.inputs.env)
           echo "version=$VERSION" >> $GITHUB_OUTPUT
       - id: set-name
         run: echo "name=my-app-${{github.sha}}" >> $GITHUB_OUTPUT
