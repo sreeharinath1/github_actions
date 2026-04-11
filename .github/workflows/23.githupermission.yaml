@@ -9,5 +9,9 @@ jobs:
     steps:
       - name: content permission
         uses: actions/checkout@v4
+      - name: editing a file
+        run: |
+          echo "ouput" > output.txt
+          git push
       - name: list repo file
         run: ls -la
