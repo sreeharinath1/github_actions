@@ -1,4 +1,4 @@
-name:
+name: aa.dockerbuild
 on:
   workflow_dispatch:
 jobs:
