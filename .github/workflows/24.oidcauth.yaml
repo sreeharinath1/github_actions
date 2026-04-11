@@ -2,7 +2,7 @@ name: x.oidcauthaws
 on:
   workflow_dispatch:
 permissions:
-  id-token: write    # REQUIRED for OIDC
+  id-token: none    # REQUIRED for OIDC
   contents: read     # Needed for checkout
 
 jobs:
