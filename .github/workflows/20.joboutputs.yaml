@@ -33,7 +33,7 @@ jobs:
 
       # 4. Add summary content
       - name: Add summary
-        run: echo "## Workflow Summary: Running in $PROFILE" >> $GITHUB_STEP_SUMMARY
+        run: echo "Workflow Summary: Running in $PROFILE" >> $GITHUB_STEP_SUMMARY
 
       # 5. Use ENV and PATH
       - name: Use ENV and PATH
