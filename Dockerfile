@@ -1,4 +1,5 @@
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17
 WORKDIR /app
-COPY target/myapp.jar myapp.jar
-CMD ["java","-jar","myapp.jar"]
+COPY springboot-demo/target/.*jar springboot-demo.jar
+EXPOSE 8080
+CMD ["java", "'jar", "springboot-demo.jar"]
