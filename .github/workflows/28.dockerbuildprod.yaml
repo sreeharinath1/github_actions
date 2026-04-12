@@ -13,6 +13,13 @@ jobs:
           cache: maven
       - run: mvn clean test
         working-directory: springboot-demo
+  pack:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Package creation
+        run: mvn clean package
+        working-directory: springboot-demo
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
@@ -20,7 +27,7 @@ jobs:
           path: springboot-demo/target/*.jar
   build:
     runs-on: ubuntu-latest
-    needs: test
+    needs: [test,package]
     steps:
       - name: setup buildx docker
         uses: docker/setup-buildx-action@v3
