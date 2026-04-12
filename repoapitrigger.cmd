@@ -1,3 +1,4 @@
+set GITHUB_PAT=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
 curl -X POST ^
   -H "Accept: application/vnd.github+json" ^
   -H "Authorization: Bearer %GITHUB_PAT%" ^
