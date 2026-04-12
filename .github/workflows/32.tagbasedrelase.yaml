@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get tag ref
-        run: echo "tag is ${{gihub.ref}}"
+        run: echo "tag is ${{github.ref}}"
       - name: Get tag name rec
         run: echo "tag is ${{github.ref_name}}"
       - name: Strip V prefix
