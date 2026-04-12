@@ -1,41 +1,54 @@
 name: zh.junitworkflow
+
 on:
   workflow_dispatch:
+
 permissions:
   contents: read
   checks: write
   id-token: write
+
 jobs:
   test:
+
     runs-on: ubuntu-latest
+
     steps:
+
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '17'
-      # mvn clean verify for integration
-      - name: Test Run
-        run: mvn test
+
+      # Runs unit + integration tests + jacoco
+      - name: Run Tests
+        run: mvn clean verify
         working-directory: springboot-demo
-      - name: Publish JUnit Test reports
+
+      - name: Publish Unit Test reports
         uses: mikepenz/action-junit-report@v4
         if: always()
         with:
           report_paths: springboot-demo/target/surefire-reports/*.xml
           check_name: "Unit Test Results"
           include_passed: true
+
       - name: Publish Integration Tests
         uses: mikepenz/action-junit-report@v4
+        if: always()
         with:
           report_paths: springboot-demo/target/failsafe-reports/*.xml
-          check_name: "Integration Test"
+          check_name: "Integration Test Results"
           include_passed: true
-      - name: Upload artifacts
+
+      - name: Upload Test Artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: test-reports
-          path: | 
+          path: |
             springboot-demo/target/surefire-reports
             springboot-demo/target/failsafe-reports
+            springboot-demo/target/site/jacoco
