@@ -33,7 +33,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: sreeharinathpdev/testhub
+          images: ${{ steps.login-ecr.outputs.registry}}/testhub
           tags: |
             type=sha,prefix=sha-
             type=ref,event=branch
