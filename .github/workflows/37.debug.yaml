@@ -1,0 +1,14 @@
+name: zk.debug
+on:
+  workflow_dispatch:
+
+
+jobs:
+  debug-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable debug if requested
+        if: ${{ github.event.inputs.debug == 'true' }}
+        run: |
+          echo "ACTIONS_STEP_DEBUG=true" >> $GITHUB_ENV
+          echo "ACTIONS_RUNNER_DEBUG=true" >> $GITHUB_ENV
