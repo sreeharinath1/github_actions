@@ -53,8 +53,8 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry}}
           ECR_REPOSITORY: ${{ steps.login-ecr.outputs.repository}}
           IMAGE_TAG: ${{ steps.meta.outputs.tags}}
-          run: |
-          #First tag the local image with the ECR URI
-            docker tag sreeharinathpdev/testhub:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          #Then push to ECR
-            docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        run: |
+        #First tag the local image with the ECR URI
+          docker tag sreeharinathpdev/testhub:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        #Then push to ECR
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
