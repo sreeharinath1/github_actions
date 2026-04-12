@@ -20,4 +20,5 @@ jobs:
   deploy:
     needs: build-deploy
     runs-on: ubuntu-latest
-    run: echo "deploying version is $VERSION"
+    steps:
+      - run: echo "deploying version is $VERSION"
