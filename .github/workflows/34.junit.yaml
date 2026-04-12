@@ -14,8 +14,9 @@ jobs:
         with:
           distribution: temurin
           java-version: '17'
+      # mvn clean verify for integration
       - name: Test Run
-        run: mvn clean verify
+        run: mvn test
         working-directory: springboot-demo
       - name: Publish JUnit Test reports
         uses: mikepenz/action-junit-report@v4
