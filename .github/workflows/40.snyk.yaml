@@ -6,7 +6,7 @@ jobs:
   snyk-scan:
     runs-on: ubuntu-latest
     permissions:
-      security-events: write  # Required for SARIF upload to GitHub Security tab
+      security-events: write
 
     steps:
       - name: Checkout code
@@ -25,16 +25,21 @@ jobs:
       - name: Install Snyk CLI
         run: npm install -g snyk
 
+      - name: Authenticate Snyk
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk auth $SNYK_TOKEN  # Explicitly authenticate before scan
+
       - name: Run Snyk vulnerability scan
-        continue-on-error: true  # Don't fail here — upload SARIF first
+        continue-on-error: true
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         run: snyk test --maven-aggregate-project --sarif-file-output=snyk.sarif --severity-threshold=high
-        working-directory: springboot-demo  # run: supports working-directory
+        working-directory: springboot-demo
 
       - name: Upload SARIF to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v3
-        if: always()  # Upload even if scan found vulnerabilities
+        if: always()
         with:
           sarif_file: springboot-demo/snyk.sarif
 
