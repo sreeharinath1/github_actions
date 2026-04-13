@@ -42,7 +42,8 @@ jobs:
             -Dsonar.projectKey=sree \
             -Dsonar.projectName="springboot-demo" \
             -Dsonar.host.url="${SONAR_HOST_URL}" \
-            -Dsonar.login="${SONAR_TOKEN}"
+            -Dsonar.login="${SONAR_TOKEN}" \
+            -Dsonar.qualitygate.wait=true
         working-directory: springboot-demo
 
       - name: Check Quality Gate
