@@ -1,0 +1,24 @@
+name: CI
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CheckOut
+        uses: actions/checkout@v4
+      - name: Install Snyk
+        run: npm install snyk -g
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          cache: maven
+      - name: Run Tests
+        run: mvn clean verify
+        working-directory: springboot-demo
+      - name: snyk dependency Check
+        run: snyk test
+      - name: dependency Monitor
+        run: snyk monitor
