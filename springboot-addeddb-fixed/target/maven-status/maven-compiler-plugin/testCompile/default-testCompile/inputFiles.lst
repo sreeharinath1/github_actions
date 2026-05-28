@@ -1,0 +1,5 @@
+/home/ec2-user/project1/projecta/springboot-addeddb-fixed/src/test/java/com/example/demo/service/EmployeeServiceTest.java
+/home/ec2-user/project1/projecta/springboot-addeddb-fixed/src/test/java/com/example/demo/controller/EmployeeControllerTest.java
+/home/ec2-user/project1/projecta/springboot-addeddb-fixed/src/test/java/com/example/demo/integration/EmployeeApiIT.java
+/home/ec2-user/project1/projecta/springboot-addeddb-fixed/src/test/java/com/example/demo/controller/EmployeeRestControllerTest.java
+/home/ec2-user/project1/projecta/springboot-addeddb-fixed/src/test/java/com/example/demo/integration/EmployeeRepositoryIT.java

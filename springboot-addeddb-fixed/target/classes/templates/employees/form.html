@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title th:text="${employee.id != null} ? 'Edit Employee' : 'New Employee'">Employee Form</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1 th:text="${employee.id != null} ? '&#9998; Edit Employee' : '&#43; New Employee'">Form</h1>
+        <a href="/employees" class="btn">&#8592; Back to List</a>
+    </header>
+
+    <!-- Create vs Update action -->
+    <form th:action="${employee.id != null} ? @{/employees/update/{id}(id=${employee.id})} : @{/employees}"
+          th:object="${employee}"
+          method="post"
+          class="form-card">
+
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" th:field="*{name}" placeholder="e.g. Jane Doe"/>
+            <span class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="email" id="email" th:field="*{email}" placeholder="e.g. jane@company.com"/>
+            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+        </div>
+
+        <!-- Department -->
+        <div class="form-group">
+            <label for="department">Department *</label>
+            <select id="department" th:field="*{department}">
+                <option value="">-- Select Department --</option>
+                <option value="Engineering">Engineering</option>
+                <option value="Marketing">Marketing</option>
+                <option value="HR">HR</option>
+                <option value="Finance">Finance</option>
+                <option value="Operations">Operations</option>
+            </select>
+            <span class="error" th:if="${#fields.hasErrors('department')}" th:errors="*{department}"></span>
+        </div>
+
+        <!-- Position -->
+        <div class="form-group">
+            <label for="position">Position</label>
+            <input type="text" id="position" th:field="*{position}" placeholder="e.g. Senior Engineer"/>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary"
+                    th:text="${employee.id != null} ? 'Update Employee' : 'Create Employee'">Submit</button>
+            <a href="/employees" class="btn">Cancel</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
